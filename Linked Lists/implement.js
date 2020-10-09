@@ -5,16 +5,22 @@ class Node {
   }
 }
 
-let head = new Node(1, null)
-let currentNode = head
+// Deal with it
+let head = new Node(
+  1, new Node (
+    5, new Node (
+      13, new Node (
+        2, new Node (
+          1, new Node (
+            5, new Node (
+              5, new Node(
+                13, null
+              )
+            )
+          )
+        )
+      )
+    )
+  ))
 
-for (let i = 0; i < 10; i++) {
-  const newNode = new Node(i, null)
-  currentNode.next = newNode
-  currentNode = newNode
-}
-
-while(head.next) {
-  console.log(head.value)
-  head = head.next
-}
+module.exports = head
