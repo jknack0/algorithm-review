@@ -19,9 +19,59 @@ class Node {
 
 class LinkedList {
   constructor() {
-    this.head = null
-    this.tail = null
-    this.length = 0
+    this.head = undefined
+    this.tail = undefined
+    this.size = 0
+  }
+
+  insert(element) {
+    if(this.head === undefined) {
+      this.head = new Node(element)
+      this.tail = this.head
+    } else {
+      this.tail.nextNode = new Node(element)
+      this.tail = this.tail.nextNode
+    }
+
+    this.size = this.size + 1
+  }
+
+  delete(element) {
+    if(this.head === undefined) {
+      return
+    }
+
+    if(this.head.value === element) {
+      this.head = this.head.nextNode
+      this.size = this.length - 1
+    } else {
+      let walker = this.head
+
+      while(walker.nextNode.value !== element && walker.value !== undefined) {
+        walker = walker.nextNode
+      }
+
+      if(walker !== undefined) {
+        walker.nextNode = walker.nextNode.nextNode
+        this.size = this.size - 1
+
+        if(walker.nextNode = undefined) {
+          this.tail = walker
+        }
+      }
+    }
+  }
+
+  toString() {
+    const temp = [];
+    let walker = this.head;
+
+    while (walker) {
+      temp.push(walker.value);
+      walker = walker.nextNode;
+    }
+
+    return `[${temp.join(' ')}] (${this.size})`
   }
 }
 
@@ -43,4 +93,7 @@ let head = new Node(
     )
   ))
 
-module.exports = head
+module.exports = {
+  LinkedList,
+  Node
+}
