@@ -38,11 +38,11 @@ class Queue {
   }
 
   peek() {
-    return this._head
+    return this._head.value
   }
 
   isEmpty() {
-    return this._length === 0
+    return tthis._head === undefined
   }
 
   
@@ -66,3 +66,5 @@ class QueueNode {
       this._next = node
     }
 }
+
+module.exports = Queue

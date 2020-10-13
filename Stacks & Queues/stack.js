@@ -23,6 +23,10 @@ class Stack{
     return this._data[this._length - 1]
   }
 
+  size() {
+    return this._length
+  }
+
   isEmpty() {
     return this._length === 0
   }
