@@ -1,4 +1,4 @@
-const head = require('./implement')
+const { head } = require('./implement')
 
 const returnKthElement = (input, k) => {
   let listLength = 0

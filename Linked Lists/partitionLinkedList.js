@@ -1,4 +1,4 @@
-let head = require('./implement')
+const { head } = require('./implement')
 
 const partitionLinkedList = (head, x) => {
   let lessThanX = []

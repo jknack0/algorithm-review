@@ -1,4 +1,4 @@
-let head = require('./implement')
+const { head } = require('./implement')
 
 let middleNode = head.nextNode.nextNode.nextNode
 

@@ -12,7 +12,7 @@ const sumList = (input1, input2) => {
     total = value1 + value2
     
     result.insert((value1 + value2 + carry) % 10)
-    carry = total >= 10
+    carry = (total >= 10) ? 1 : 0
 
     if(walker1) walker1 = walker1.nextNode
     if(walker2) walker2 = walker2.nextNode
@@ -26,10 +26,17 @@ const sumList = (input1, input2) => {
   list1.insert(5)
   list1.insert(6)
   list1.insert(8)
+  list1.insert(8)
+  list1.insert(8)
+  list1.insert(8)
+  list1.insert(8)
 
   const list2 = new LinkedList()
   list2.insert(5)
+  list1.insert(8)
+  list1.insert(8)
   list2.insert(6)
+  list1.insert(8)
 
   console.log(sumList(list1, list2).toString())
 })()
