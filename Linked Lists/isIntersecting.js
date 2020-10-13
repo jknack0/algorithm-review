@@ -29,7 +29,7 @@ const isIntersecting = (list1, list2) => {
   l2.insert(51)
   l2.insert(8)
   l2.insert(12)
-
+  
   let intersect = new LinkedList()
   intersect.insert(69)
   intersect.insert(420)
