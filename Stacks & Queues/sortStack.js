@@ -32,6 +32,5 @@ const sortStack = (stack) => {
   unsortedStack.push(5)
   unsortedStack.push(8)
 
-  console.log(sortStack(unsortedStack))
-
+  console.log(sortStack(unsortedStack)._data.join(' '))
 })()
