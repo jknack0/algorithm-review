@@ -5,7 +5,7 @@ class Queue {
     this._length = 0
   }
 
-  add(item) {
+  enqueue(item) {
     if(this._head === undefined) {
       this._head = new QueueNode(item)
       this._tail = this._head
@@ -18,7 +18,7 @@ class Queue {
     this._length = this._length + 1
   }
 
-  remove() {
+  dequeue() {
     if(this._length === 0) {
       return
     }
@@ -42,7 +42,7 @@ class Queue {
   }
 
   isEmpty() {
-    return tthis._head === undefined
+    return this._head === undefined
   }
 
   
