@@ -7,14 +7,17 @@ function TreeNode(val, left, right) {
 }
 
 const minimalTree = (nums, start = 0, end = nums.length - 1) => {
-  if(start<=end){
-    let mid = Math.floor((start+end)/2);
-    let root = new TreeNode(nums[mid]);
-    root.left = minimalTree(nums, start, mid-1);
-    root.right = minimalTree(nums, mid+1, end);
-    return root;
+  if(start > end) {
+    return null
   }
-  return null;
+
+  let mid = Math.floor((start + end) / 2)
+  let root = new TreeNode(nums[mid])
+
+  root.left = minimalTree(nums, start, mid - 1)
+  root.right = minimalTree(nums, mid + 1, end)
+
+  return  root
 }
 
 const root = minimalTree(sortedArray)
