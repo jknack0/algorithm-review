@@ -12,7 +12,14 @@ const getHeight = (root) => {
   }
 
   const leftHeight = getHeight(root.left)
+  if(leftHeight === false) {
+    return false
+  }
+
   const rightHeight = getHeight(root.right)
+  if(rightHeight === false) {
+    return false
+  }
 
   if(Math.abs(leftHeight - rightHeight) > 1) {
     return false
