@@ -29,5 +29,6 @@ const inOrderTraversal = (root) => {
   inOrderTraversal(root.right)
 }
 
-inOrderTraversal(root)
-
+module.exports = {
+  root
+}
