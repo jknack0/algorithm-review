@@ -1,3 +1,8 @@
+// Implement a function to check if a binary tree is balanced. 
+// For the purposes of this question, a balanced tree is defined 
+// to be a tree such that the heights of the two subtrees of any
+// node never differ by more than one.
+
 const { root } = require('./minimalTree')
 
 function TreeNode(val, left, right) {
@@ -12,14 +17,7 @@ const getHeight = (root) => {
   }
 
   const leftHeight = getHeight(root.left)
-  if(leftHeight === false) {
-    return false
-  }
-
   const rightHeight = getHeight(root.right)
-  if(rightHeight === false) {
-    return false
-  }
 
   if(Math.abs(leftHeight - rightHeight) > 1) {
     return false

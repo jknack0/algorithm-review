@@ -1,11 +1,13 @@
-const {root} = require('./minimalTree')
+// Implement a function to check if a binary tree is a binary search tree.
+
+const { root } = require('./minimalTree')
 
 const helper = (root, lower, upper) => {
   if(root === null) {
     return true
   }
 
-  let value = root.val
+  value = root.val
   if(lower !== null && value <= lower) return false
   if(upper !== null && value >= upper) return false
 
